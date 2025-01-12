@@ -148,7 +148,7 @@ class onwer(commands.Cog):
     resposta = discord.Embed( 
       colour=discord.Color.yellow(),
       title="🦊┃Ajuda sobre o bot",
-      description="Eaeee O Braixen aqui, bem eu deixei esse comando aqui para que você pudesse editar minha mensagem no onwer.py, espero que esteja gostando do bot, qualquer coisa me procure em https://dsc.gg/braixen"
+      description="Eaeee O Braixen aqui, ainda estou em desenvolvimento"
     )
     await interaction.response.send_message(embed=resposta)
 
