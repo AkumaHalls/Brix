@@ -15,8 +15,8 @@ if not os.path.exists('.env'):
 
 #CARREGA E LE O ARQUIVO .env
 load_dotenv() #load .env
-token_bot =  #acessa e define o token do bot
-donoid =  #acessa e define a ID do dono do bot
+token_bot = "", #acessa e define o token do bot
+donoid = "", #acessa e define a ID do dono do bot
 prefixo = '-br' # Define o prefixo do bot, pode alterar se quiser
 
 
