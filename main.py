@@ -1,63 +1,64 @@
-# AS IMPORTAÇÔES NECESSARIAS
-import discord,os
+# AS IMPORTAÇÕES NECESSÁRIAS
+import discord
+import os
 from os import listdir
 from discord.ext import commands
-from discord.errors import HTTPException, LoginFailure
-from discord import app_commands
+from discord.errors import LoginFailure
 from dotenv import load_dotenv
 
-
-# Verifica se o arquivo .env existe
+# Verifica se o arquivo .env existe (opcional para desenvolvimento local)
 if not os.path.exists('.env'):
-    print("O arquivo .env não foi encontrado, por favor edite o Exemplo.env para .env somente com as informações do seu bot.")
+    print("O arquivo .env não foi encontrado. Por favor, edite o Exemplo.env para .env com as informações do seu bot.")
+else:
+    load_dotenv()  # Carrega as variáveis de ambiente do arquivo .env (local)
+
+# Carrega o token do bot e o ID do dono a partir das variáveis de ambiente
+token_bot = os.getenv("DISCORD_TOKEN")  # Token do bot
+donoid = os.getenv("OWNER_ID")          # ID do dono do bot
+prefixo = '-br'                         # Define o prefixo do bot
+
+# Verifica se o token foi carregado corretamente
+if not token_bot:
+    print("Erro: O token do bot não foi encontrado. Certifique-se de que a variável DISCORD_TOKEN foi configurada corretamente.")
     exit()
 
-
-#CARREGA E LE O ARQUIVO .env
-load_dotenv() #load .env
-token_bot = "", #acessa e define o token do bot
-donoid = "", #acessa e define a ID do dono do bot
-prefixo = '-br' # Define o prefixo do bot, pode alterar se quiser
-
-
-#classe basica de iniciação do bot
+# Classe básica de inicialização do bot
 class Client(commands.Bot):
     def __init__(self) -> None:
-        # o command_prefix está definindo um prefixo para o bot, você pode alterar caso desejar porém nessa versão não usamos nenhum prefixo
+        # Configura o prefixo do bot e os intents
         super().__init__(command_prefix=prefixo, intents=discord.Intents().all())
-        self.synced = False #Nós usamos isso para o bot não sincronizar os comandos mais de uma vez
+        self.synced = False  # Evita sincronizar comandos mais de uma vez
         self.cogslist = []
-        #o item a baixo faz a leitura da lista de cogs que são os outros arquivos de codigo separado e os registra.        
+
+        # Lê a lista de cogs (arquivos separados com comandos) e registra
         for cog in listdir("cogs"):
             if cog.endswith(".py"):
                 cog = os.path.splitext(cog)[0]
                 self.cogslist.append('cogs.' + cog)
 
-    #não sei, não mexe, só sei que precisa
     async def setup_hook(self):
-      for ext in self.cogslist:
-        await self.load_extension(ext)
+        # Carrega as extensões (cogs) registradas
+        for ext in self.cogslist:
+            await self.load_extension(ext)
 
-    #On_ready do bot
     async def on_ready(self):
+        # Executa ações quando o bot estiver pronto
         await self.wait_until_ready()
-        await self.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="dsc.gg/braixen")) #Indica oque exibir no status do bot.
-        if not self.synced: #Checar se os comandos slash foram sincronizados 
-            await self.tree.sync()
+        await self.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="dsc.gg/braixen"))  # Define o status do bot
+        if not self.synced:
+            await self.tree.sync()  # Sincroniza comandos de barra (slash)
             self.synced = True
-            print(f"Comandos sicronizados: {self.synced}")
-        print(f"\no Bot {self.user} Já esta Online e disponivel")
+            print(f"Comandos sincronizados: {self.synced}")
+        print(f"\nO bot {self.user} já está online e disponível.")
         print(f"\nID do dono é {donoid}")
-    
 
-#COISA DO MAIN NÂO MEXER
-
+# Inicializa o cliente
 client = Client()
 
-#LIGA O BOT e o mantem online
+# Liga o bot e o mantém online
 try:
     client.run(token_bot)
-except LoginFailure as e:
+except LoginFailure:
     print("Erro ao fazer login: O token fornecido é inválido ou incorreto.")
 except Exception as e:
     print(f"Erro desconhecido: {e}")
