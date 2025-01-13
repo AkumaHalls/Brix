@@ -208,7 +208,7 @@ class contratacao_bh(discord.ui.Select): # Olha a classe aqui antes a outra era 
             staff = id_cargo_atendente
             mensagemcanal = "Conte para a gente como você deseja o seu bot? se já tem alguma coisa fale sobre ela para que possamos te ajudar."
             categoriadeatendimento = id_categoria_staff
-            await interaction.response.send_message("**Deseja ter seu proprio bot?** \n\npois bem o Braixen tem alguns conhecimentos e é bem provável que ele tenha uma solução para você.\n\nabre um ticket ai para ele te ajudar.",ephemeral=True,view=CreateTicket())
+            await interaction.response.send_message("**Deseja ter seu proprio bot?** \n\npois bem o Akuma tem alguns conhecimentos e é bem provável que ele tenha uma solução para você.\n\nabre um ticket ai para ele te ajudar.",ephemeral=True,view=CreateTicket())
        
         elif self.values[0] == "servidor":
             emojiglobal = "💻"
@@ -216,7 +216,7 @@ class contratacao_bh(discord.ui.Select): # Olha a classe aqui antes a outra era 
             staff = id_cargo_atendente
             mensagemcanal = "Você já tem uma ideia de como deseja seu servidor? qual tema ele irá abordar? escreva aqui para a gente saber e poder te ajudar."
             categoriadeatendimento = id_categoria_staff
-            await interaction.response.send_message("**Deseja ajuda para montar seu proprio servidor?** \n\no Braixen oferece o serviço de montagem de servidores que inclui **planejamento** e **implantação** de toda a estrutura e configuração de bots populares.\n\no Valor inicial dos serviços é de R$ 40,00 Reais. \n*podendo haver acrecimos com base no tamanho do projeto* \n\n**Não aceitamos pagamento** em Sonhos, Foxcoin ou qualquer outra moeda de bot.",ephemeral=True,view=CreateTicket())
+            await interaction.response.send_message("**Deseja ajuda para montar seu proprio servidor?** \n\no Akuma oferece o serviço de montagem de servidores que inclui **planejamento** e **implantação** de toda a estrutura e configuração de bots populares.\n\no Valor inicial dos serviços é de R$ 40,00 Reais. \n*podendo haver acrecimos com base no tamanho do projeto* \n\n**Não aceitamos pagamento** em Sonhos, Foxcoin ou qualquer outra moeda de bot.",ephemeral=True,view=CreateTicket())
         elif self.values[0] == "outros":
             emojiglobal = "🌐"
             tipoticket = "Ticket de Outras Solicitações"
@@ -263,7 +263,7 @@ class tribunal_bh(discord.ui.Select): # CLASSEE EDITADA DE NOVOOOOOO BIRL Dropdo
             staff = id_cargo_tribunal
             mensagemcanal = "Por favor escreva no chat o horario que você foi banido e passe a sua ID de usuario ou seu Discord Tag."
             categoriadeatendimento = id_categoria_tribunal
-            await interaction.response.send_message("**Deseja Questionar o seu banimento?** \n\nSe você foi banido do Braixen's House e acredita que seu banimento tenha sido injusto.\n\nabre um ticket ai e vamos revisar o seu caso.",ephemeral=True,view=CreateTicket())
+            await interaction.response.send_message("**Deseja Questionar o seu banimento?** \n\nSe você foi banido do STF/ASGARD e acredita que seu banimento tenha sido injusto.\n\nabre um ticket ai e vamos revisar o seu caso.",ephemeral=True,view=CreateTicket())
        
         elif self.values[0] == "duvidas":
             emojiglobal = "❓"
@@ -271,7 +271,7 @@ class tribunal_bh(discord.ui.Select): # CLASSEE EDITADA DE NOVOOOOOO BIRL Dropdo
             staff = id_cargo_tribunal
             mensagemcanal = "nada"
             categoriadeatendimento = id_categoria_tribunal
-            await interaction.response.send_message("**Está com dúvidas sobre o seu banimento?** \n\nBom todos os registros do Braixen's House estão disponívels de forma replicada neste servidor, no Canal <#1046777277582692393>.\n\nCaso você não entenda o motivo do seu banimento abra a opção de Questionar seu banimento e vamos exclarecer a todas as suas dúvidas.",ephemeral=True)
+            await interaction.response.send_message("**Está com dúvidas sobre o seu banimento?** \n\nBom todos os registros do STF/ASGARD estão disponívels de forma replicada neste servidor, no Canal <#1046777277582692393>.\n\nCaso você não entenda o motivo do seu banimento abra a opção de Questionar seu banimento e vamos exclarecer a todas as suas dúvidas.",ephemeral=True)
         
         elif self.values[0] == "regras":
             emojiglobal = "📋"
@@ -279,7 +279,7 @@ class tribunal_bh(discord.ui.Select): # CLASSEE EDITADA DE NOVOOOOOO BIRL Dropdo
             staff = id_cargo_tribunal
             mensagemcanal = "nada"
             categoriadeatendimento = id_categoria_tribunal
-            await interaction.response.send_message("**Você tem dúvidas sobre as regras?** \n\nNão se preocupe, todas elas estão em <#1046764161398493340>.",ephemeral=True)
+            await interaction.response.send_message("**Você tem dúvidas sobre as regras?** \n\nNão se preocupe, todas elas estão em <#810674050581659673>.",ephemeral=True)
 
 
 
@@ -343,7 +343,7 @@ class CreateTicket(discord.ui.View):
             await ticket.send(f"Oiiie {interaction.user.mention} **Tudo bem?**")
             async with ticket.typing():
                 await asyncio.sleep(1.0)
-            await ticket.send(f"Seja muito bem-vindo(a) ao atendimento do **Braixen's House**!! <:BN:416595378956271626> ")
+            await ticket.send(f"Seja muito bem-vindo(a) ao atendimento do **STF/ASGARD**!! <:BN:416595378956271626> ")
             async with ticket.typing():
                 await asyncio.sleep(1.5)
             await ticket.send(f"**sinta-se a vontade para usar os bots aqui no chat**")
@@ -475,8 +475,8 @@ class atendimento(commands.Cog):
         print (f"Usuario: {interaction.user.name} usou painel suporte")
         embed1 = discord.Embed(
             colour=discord.Color.yellow(),
-            title="Atendimento Braixen's House",
-            description="Seja bem-vindo(a) a nossa **seção de ajuda** do **Braixen's House.** \n \nAqui você pode tirar dúvidas, pedir ajuda para alguns problemas, solicitar cargos, informar sobre problemas de acesso, sugestões de mudanças entre outros basta selecionar a opção desejada."
+            title="Atendimento STF/ASGARD",
+            description="Seja bem-vindo(a) a nossa **seção de ajuda** do **STF/ASGARD.** \n \nAqui você pode tirar dúvidas, pedir ajuda para alguns problemas, solicitar cargos, informar sobre problemas de acesso, sugestões de mudanças entre outros basta selecionar a opção desejada."
         )
         embed1.set_image(url="https://cdn.discordapp.com/attachments/1067789510097768528/1146086873501028513/atendimento.png")
         if interaction.user.id == donoid:
@@ -493,7 +493,7 @@ class atendimento(commands.Cog):
         embed2 = discord.Embed(
             colour=discord.Color.yellow(),
             title="Contratação Braixen's House",
-            description="Seja bem-vindo(a) a nossa **seção de contrate** do **Braixen's House.** \n \nAqui você pode Contratar os meus serviços de Braixen para **Consultoria, Planejamento, Desenvolvimento** de servidores e **Implantação** de bots, e também os serviços dos artistas de nossa comunidade.\n\nEntão caso esteja interessado **abre um ticket ai**."
+            description="Seja bem-vindo(a) a nossa **seção de contrate** do **STF/ASGARD.** \n \nAqui você pode Contratar os meus serviços de Akuma para **Consultoria, Planejamento, Desenvolvimento** de servidores e **Implantação** de bots, e também os serviços dos artistas de nossa comunidade.\n\nEntão caso esteja interessado **abre um ticket ai**."
         )
         #imagem do meu embed
         embed2.set_image(url="https://cdn.discordapp.com/attachments/1067789510097768528/1146086918895964260/contrate.png")
@@ -511,7 +511,7 @@ class atendimento(commands.Cog):
         embed3 = discord.Embed(
             colour=discord.Color.yellow(),
             title="Tribunal Braixen's House",
-            description="Seja bem-vindo(a) ao **Tribunal** do **Braixen's House.** \n \nAqui você pode verificar e contestar banimentos e avisos que aconteceram no Braixen's House.\n\n**Atenção** não abra ticket sem motivo, caso contrario poderemos ignorar sua solicitação."
+            description="Seja bem-vindo(a) ao **Tribunal** do **STF/ASGARD.** \n \nAqui você pode verificar e contestar banimentos e avisos que aconteceram no STF/ASGARD.\n\n**Atenção** não abra ticket sem motivo, caso contrario poderemos ignorar sua solicitação."
         )
         #imagem do meu embed
         embed3.set_image(url="https://cdn.discordapp.com/attachments/1067789510097768528/1146086949057208410/tribunal.png")
@@ -558,7 +558,7 @@ class atendimento(commands.Cog):
             await interaction.channel.send(f"Parece que seu atendimento está chegando ao fim.")
             async with interaction.channel.typing():
                     await asyncio.sleep(2)
-            await interaction.channel.send(f"O *Braixen's House* agradece o contato e esperamos que você não tenha ficado com nenhuma dúvida sobre sua solicitação. <:BraixHappy2:988776437790158918>")
+            await interaction.channel.send(f"O *STF/ASGARD* agradece o contato e esperamos que você não tenha ficado com nenhuma dúvida sobre sua solicitação. <:BraixHappy2:988776437790158918>")
             async with interaction.channel.typing():
                     await asyncio.sleep(2)
             await interaction.channel.send(f"Você pode **avaliar o seu atendimento** usando o comando </atendimento avaliar:1138614448840511577>.")
@@ -656,7 +656,7 @@ class atendimento(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Color.yellow(),
                 #title="Atendimento Braixen's House",
-                description=f"**Olá {membro.mention}**, Bem-vindo(a) ao canal de entrevista.\n\nEsse canal será usado para realizar sua  **entrevista** lembre-se ela está agendada para o **dia {dia}/{generated} ás {horario}**, peço que aguarde o Braixen entrar em contato com você nesse horario para iniciar a sua entrevista."
+                description=f"**Olá {membro.mention}**, Bem-vindo(a) ao canal de entrevista.\n\nEsse canal será usado para realizar sua  **entrevista** lembre-se ela está agendada para o **dia {dia}/{generated} ás {horario}**, peço que aguarde o Akuma entrar em contato com você nesse horario para iniciar a sua entrevista."
             )
             embed.set_author(name=f"{botname}",icon_url=f"{botavatar}")
             embed.set_thumbnail(url="https://i.imgur.com/ixqtABY.png")
