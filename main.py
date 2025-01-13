@@ -1,3 +1,13 @@
+# AS IMPORTAÇÕES NECESSÁRIAS
+import discord
+import os
+from os import listdir
+from discord.ext import commands
+from discord.errors import LoginFailure
+from dotenv import load_dotenv
+import express
+
+
 const express = require('express')
 const app = express();
 const port = 3000;
@@ -8,13 +18,7 @@ app.listen(port, () => {
   console.log(Example app listening at http://localhost:${port})
 })
 
-# AS IMPORTAÇÕES NECESSÁRIAS
-import discord
-import os
-from os import listdir
-from discord.ext import commands
-from discord.errors import LoginFailure
-from dotenv import load_dotenv
+
 
 # Verifica se o arquivo .env existe (opcional para desenvolvimento local)
 if not os.path.exists('.env'):
