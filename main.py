@@ -44,7 +44,7 @@ class Client(commands.Bot):
     async def on_ready(self):
         # Executa ações quando o bot estiver pronto
         await self.wait_until_ready()
-        await self.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="dsc.gg/braixen"))  # Define o status do bot
+        await self.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Bem vindo"))  # Define o status do bot
         if not self.synced:
             await self.tree.sync()  # Sincroniza comandos de barra (slash)
             self.synced = True
