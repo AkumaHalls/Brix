@@ -129,7 +129,7 @@ class suporte_bh(discord.ui.Select): #a class aqui recebeu o nome de Dropdown pa
             staff = id_cargo_atendente
             mensagemcanal = "O Braixen's House está sujeito a avaliação de requisitos e a possiveis cobranças pela sua divulgação. \n\nNesta Modalidade **todas as parcerias** precisam ser feitas em conjunto com um **sorteio** pois será dessa forma que iremos efetuar **sua divulgação.**\n*Adiante seu atendimento enviando o link do seu servidor para fazermos a analise dele*"
             categoriadeatendimento = id_categoria_staff
-            await interaction.response.send_message("**Deseja divulgar algo no Braixen's House?** \nPara **divulgar seu servidor, bot ou outros projetos.**\nO *Braixen's House* pode **te ajudar com isso** mas estamos **sujeito a avaliação de requisitos** e a possiveis **cobranças pela sua divulgação**. \n\nNesta Modalidade **todas as parcerias** precisam ser feitas em conjunto com um **sorteio** pois será dessa forma que iremos efetuar **sua divulgação.**\n**Visite o Canal** de <#982990181307142174> e **confirá os topicos 2 e 3** que informamos com detalhes como **funciona e como avaliamos**.\n\n **Não abra o ticket sem ler sobre nosso protocolo.**",ephemeral=True,view=CreateTicket())
+            await interaction.response.send_message("**Deseja divulgar algo no STF/ASGARD?** \nPara **divulgar seu servidor, bot ou outros projetos.**\nO *Braixen's House* pode **te ajudar com isso** mas estamos **sujeito a avaliação de requisitos** e a possiveis **cobranças pela sua divulgação**. \n\nNesta Modalidade **todas as parcerias** precisam ser feitas em conjunto com um **sorteio** pois será dessa forma que iremos efetuar **sua divulgação.**\n**Visite o Canal** de <#982990181307142174> e **confirá os topicos 2 e 3** que informamos com detalhes como **funciona e como avaliamos**.\n\n **Não abra o ticket sem ler sobre nosso protocolo.**",ephemeral=True,view=CreateTicket())
         
         elif self.values[0] == "Staff":
             emojiglobal = "💼"
@@ -137,15 +137,15 @@ class suporte_bh(discord.ui.Select): #a class aqui recebeu o nome de Dropdown pa
             staff = id_cargo_atendente
             mensagemcanal = "1"
             categoriadeatendimento = id_categoria_staff
-            await interaction.response.send_message("**Deseja fazer parte do time Braixen's house?** \n\nSabia que temos um formulário para quem está interessado em se tornar um staff você pode abrir ele e verificar se estamos aceitando novos formulários, Olha ta aqui o link: \nhttps://docs.google.com/forms/d/e/1FAIpQLSeZGFDS7g5oiaFV6lE2KiErLCAQXazW3SY9tieWeT5zrlOF5g/viewform?usp=sf_link",ephemeral=True)
+            await interaction.response.send_message("**Deseja fazer parte do time STF/ASGARD?** \n\nSabia que temos um formulário para quem está interessado em se tornar um staff você pode abrir ele e verificar se estamos aceitando novos formulários, Olha ta aqui o link: \nhttps://docs.google.com/forms/d/e/1FAIpQLSeZGFDS7g5oiaFV6lE2KiErLCAQXazW3SY9tieWeT5zrlOF5g/viewform?usp=sf_link",ephemeral=True)
 
         elif self.values[0] == "vip":
             emojiglobal = "🌟"
             tipoticket = "Ticket de Compra de vip"
             staff = id_cargo_atendente
-            mensagemcanal = "**Já sabe qual plano vai querer? se não visite <#971011814324334602> e escolha seu plano e depois volte aqui.**\n\n **Adiante seu atendimento indicando se deseja comprar por sonhos ou por Tails coin e o plano desejado.** \n Compras por tails coin use o comando T!pagar Valor @domembro"
+            mensagemcanal = "**Já sabe qual plano vai querer? se não visite <#1072176670196367420> e escolha seu plano e depois volte aqui.**\n\n **Adiante seu atendimento indicando se deseja comprar por sonhos ou por Tails coin e o plano desejado.** \n Compras por tails coin use o comando T!pagar Valor @domembro"
             categoriadeatendimento = id_categoria_staff
-            await interaction.response.send_message("**Deseja Comprar seu Vip?** \n\nPara comprar seu vip mensal abra um ticket com o botão abaixo.\n\n*Sabia que você pode comprar a assinatura vitalícia diretamente pela loja do Tails usando `T!buy 1` super simples e fácil* ",ephemeral=True,view=CreateTicket())
+            await interaction.response.send_message("**Deseja Comprar seu Vip?** \n\nPara comprar seu vip mensal abra um ticket com o botão abaixo.\n\n*Sabia que você pode comprar a assinatura vitalícia diretamente pela loja do AKUMA usando `T!buy 1` super simples e fácil* ",ephemeral=True,view=CreateTicket())
 
         
         elif self.values[0] == "foxcloud":
@@ -314,7 +314,7 @@ class CreateTicket(discord.ui.View):
         )
         #a linha a baixo foi comentada pois o bot de teste não tinha avatar
         #embedticket.set_author(name=f"{botname}",icon_url=f"{botavatar}")
-        embedticket.set_thumbnail(url="https://i.imgur.com/ixqtABY.png")
+        embedticket.set_thumbnail(url="https://i.imgur.com/fv378Un.png")
         embedticket.set_footer(text="Você pode usar `/atendimento fechar` para encerrar o atendimento!")
                 
                 #comando para abrir canal normal
@@ -459,7 +459,7 @@ class atendimento(commands.Cog):
                 description=f"**Olá {membro.mention}**, Bem-vindo(a) ao nosso atendimento.\n\nEsse Ticket foi aberto **diretamente pela adminstração do servidor** a fim de resolver algum problema com você então pedimos que **aguarde a nossa equipe conversar com você.**"
             )
             embedticket.set_author(name=f"{self.client.user.name}",icon_url=f"{self.client.user.avatar.url}")
-            embedticket.set_thumbnail(url="https://i.imgur.com/ixqtABY.png")
+            embedticket.set_thumbnail(url="https://i.imgur.com/fv378Un.png")
             await ticket.send(f"Esse Ticket foi aberto pelo administrador {interaction.user.mention} para realizar o atendimento exclusivo do membro {membro.mention}\n\n",embed=embedticket)
         else:
             await interaction.followup.send(ephemeral=True,content=mensagemerro)
@@ -659,7 +659,7 @@ class atendimento(commands.Cog):
                 description=f"**Olá {membro.mention}**, Bem-vindo(a) ao canal de entrevista.\n\nEsse canal será usado para realizar sua  **entrevista** lembre-se ela está agendada para o **dia {dia}/{generated} ás {horario}**, peço que aguarde o Akuma entrar em contato com você nesse horario para iniciar a sua entrevista."
             )
             embed.set_author(name=f"{botname}",icon_url=f"{botavatar}")
-            embed.set_thumbnail(url="https://i.imgur.com/ixqtABY.png")
+            embed.set_thumbnail(url="https://i.imgur.com/fv378Un.png")
             await entrevista.send(f"Esse canal foi aberto pelo administrador {interaction.user.mention} para realizar a entrevista do {membro.mention}\n\n",embed=embed)
         
         else: await interaction.response.send_message(mensagemerro,ephemeral=True)
